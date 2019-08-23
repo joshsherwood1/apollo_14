@@ -1,0 +1,16 @@
+<h2>All Astronauts</h2>
+<section>
+<p><% @astronauts.each do |astronaut| %></p>
+  <p><%= astronaut.name %></p>
+  <p>Age: <%= astronaut.age %></p>
+  <p><%= astronaut.job%></p>
+    <p><% astronaut.missions.list_missions_in_alphabetical_order.each do |mission_title| %></p>
+      <p> <%= mission_title %> </p>
+    <% end %>
+    <p>Total Mission Time: <%= astronaut.missions.list_total_space_time %> days </p>
+  <% end %>
+</section>
+
+<section>
+  <p>Average Age of Astronauts: <%= Astronaut.average_age %></p>
+</section>
